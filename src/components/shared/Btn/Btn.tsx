@@ -1,7 +1,11 @@
+'use client';
+
 import React from 'react';
 
-const Btn = () => {
-  return <div>Btn</div>;
+import { Button, ButtonProps } from '@mantine/core';
+
+const Btn = (props: ButtonProps) => {
+  return <Button {...props}>{props.children}</Button>;
 };
 
 export default Btn;
