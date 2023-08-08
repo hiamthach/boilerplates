@@ -9,3 +9,9 @@
 - Eslint, Prettier
 - Storybook
   ...
+
+#### Run storybook
+
+```
+yarn storybook
+```
