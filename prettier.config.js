@@ -6,7 +6,7 @@ module.exports = {
   useTabs: false,
   quoteProps: 'consistent',
   arrowParens: 'always',
-  printWidth: 120,
+  printWidth: 90,
   plugins: ['prettier-plugin-tailwindcss', '@trivago/prettier-plugin-sort-imports'],
   importOrder: [
     '^next', // Next-related imports

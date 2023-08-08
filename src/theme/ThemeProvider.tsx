@@ -1,7 +1,13 @@
 import React from 'react';
 
-const ThemeProvider = () => {
-  return <div>ThemeProvider</div>;
+import { MantineProvider } from '@mantine/core';
+
+const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <MantineProvider withNormalizeCSS withGlobalStyles>
+      {children}
+    </MantineProvider>
+  );
 };
 
 export default ThemeProvider;
