@@ -1,0 +1,19 @@
+# Indentation and tab-related settings
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+
+# Line endings
+end_of_line = lf
+insert_final_newline = true
+
+# Charset
+charset = utf-8
+
+# Trailing whitespace and whitespace handling
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# Add more settings as needed based on your project's needs
