@@ -16,6 +16,4 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-# Prettier's "semi" and "singleQuote" settings are already covered by your Prettier configuration
-
 # Add more settings as needed based on your project's needs
