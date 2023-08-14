@@ -56,6 +56,11 @@ type EnvConfig struct {
 		SymmetricKey                 string `env:"AUTH_TOKEN_SYMMETRICKEY_KEY"`
 		ConfirmCodeTimeOut           uint32 `env:"AUTH_CONFIRM_CODE_TIMEOUT"`
 	}
+	PubNub struct {
+		PublishKey   string `env:"PUBNUB_PUB_KEY"`
+		SubscribeKey string `env:"PUBNUB_SUB_KEY"`
+		SecretKey    string `env:"PUBNUB_SECRET_KEY"`
+	}
 }
 
 func init() {
