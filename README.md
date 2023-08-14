@@ -2,7 +2,7 @@
 🧑‍💻 Jumpstart full-stack web application development using this comprehensive boilerplate project that harnesses the power of a diverse and modern technology stack.\
 👉 Checkout the branch to get the boilerplate
 1. [NextJS - Mantine](https://github.com/hiamthach/boilerplates/tree/next-mantine)
-2. [NextJS - Antd](https://github.com/hiamthach/boilerplates/tree/next-antd)\
+2. [NextJS - Antd](https://github.com/hiamthach/boilerplates/tree/next-antd)
 3. [Golang - GRPC](https://github.com/hiamthach/boilerplates/tree/go-microservices)\
 Coming Soon...
 
