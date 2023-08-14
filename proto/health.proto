@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "github.com/hiamthach/boilerplates/go-microservices/pb";
+
+message PingReq {
+
+}
+
+message PingResp {
+  int32 code = 1;
+  string message = 2;
+  string version = 3;
+}
