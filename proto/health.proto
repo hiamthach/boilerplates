@@ -13,3 +13,8 @@ message PingResp {
   string message = 2;
   string version = 3;
 }
+
+message BaseReply {
+  int32 code =      1;
+  string message =  2;
+}

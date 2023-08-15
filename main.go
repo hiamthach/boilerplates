@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"go-microservices/app/router"
+)
 
 func main() {
-	fmt.Println("Hello, World!")
+	go router.StartGRPC()
+	router.Start()
 }
