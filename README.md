@@ -1,27 +1,27 @@
-## My Boilerplate
-🧑‍💻 Jumpstart full-stack web application development using this comprehensive boilerplate project that harnesses the power of a diverse and modern technology stack.\
-👉 Checkout the branch to get the boilerplate
-1. [NextJS - Mantine](https://github.com/hiamthach/boilerplates/tree/next-mantine)
-2. [NextJS - Antd](https://github.com/hiamthach/boilerplates/tree/next-antd)
-3. [Golang - GRPC](https://github.com/hiamthach/boilerplates/tree/go-microservices)\
-Coming Soon...
+# React + TypeScript + Vite
 
-## Technologies Used
-🎨 **Frontend**:
-  - ReactJS: A popular JavaScript library for building user interfaces.
-  - NextJS: The React framework for server-rendered applications.
-  - UI Libraries: Mantine, Antd, etc.\
-  ...
-    
-🏗️ **Backend**:
-  - Golang: A statically typed, compiled language that excels at building scalable and performant backends.
-  - NodeJS: A versatile JavaScript runtime that enables server-side development with ease.
-  - PostgreSQL: A powerful open-source relational database system.
-  - Mongodb: A powerful NoSQL database for flexible and scalable data storage.
-  - Redis: An in-memory data structure store, used for caching and speeding up data retrieval.  
-  ...
-## Contribution
-Contributions are welcome! If you encounter any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.🙆🫰
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-##
-Start building your next full-stack web application with confidence. Clone this boilerplate, empower yourself to create feature-rich and performant applications that provide an exceptional user experience. Happy coding! 🚀
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+
+- Configure the top-level `parserOptions` property like this:
+
+```js
+   parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+   },
+```
+
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
