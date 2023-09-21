@@ -4,7 +4,8 @@
 1. [NextJS - Mantine](https://github.com/hiamthach/boilerplates/tree/next-mantine)
 2. [NextJS - Antd](https://github.com/hiamthach/boilerplates/tree/next-antd)
 3. [Golang - GRPC](https://github.com/hiamthach/boilerplates/tree/go-microservices)
-4. [Vite - Landing Page](https://github.com/hiamthach/boilerplates/tree/vite-landing-page)\
+4. [Golang - Gin](https://github.com/hiamthach/boilerplates/tree/go-gin)
+5. [Vite - Landing Page](https://github.com/hiamthach/boilerplates/tree/vite-landing-page)\
 Coming Soon...
 
 ## Technologies Used
