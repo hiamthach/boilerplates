@@ -1,0 +1,39 @@
+version: '3'
+services:
+  mongodb:
+    image: mongo:6.0
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: your_username
+      MONGO_INITDB_ROOT_PASSWORD: your_password
+      MONGO_INITDB_DATABASE: your_database_name
+    networks:
+      - mynetwork
+
+  redis:
+    image: redis
+    container_name: redis
+    ports:
+      - "6379:6379"
+    environment:
+      REDIS_PASSWORD: your_password
+    networks:
+      - mynetwork
+
+  go-microservice:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: go-microservice
+    ports:
+      - "8080:8080"
+    networks:
+      - mynetwork
+    depends_on:
+      - mongodb
+      - redis
+
+networks:
+  mynetwork:

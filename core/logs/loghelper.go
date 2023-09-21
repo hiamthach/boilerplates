@@ -1,8 +1,8 @@
-package cores_logs
+package core_logs
 
 import (
 	"go-microservices/app/config"
-	"go-microservices/app/share"
+	"go-microservices/shared"
 	"os"
 	"sync"
 	"time"
@@ -44,8 +44,8 @@ func (loghelper *LogHelper) InfoMessage(context *SessionContext, action string, 
 	if context == nil {
 		context = &SessionContext{}
 	}
-	logData := share.AuthSvcLog{
-		Log: share.Action{
+	logData := shared.AuthSvcLog{
+		Log: shared.Action{
 			Action:    action,
 			Message:   messsage,
 			RequestId: context.Id,
@@ -55,8 +55,8 @@ func (loghelper *LogHelper) InfoMessage(context *SessionContext, action string, 
 }
 
 func (loghelper *LogHelper) SysError(err error) {
-	logData := share.AuthSvcLog{
-		Log: share.Action{
+	logData := shared.AuthSvcLog{
+		Log: shared.Action{
 			Message: err.Error(),
 		},
 	}
@@ -69,8 +69,8 @@ func (loghelper *LogHelper) Error(context *SessionContext, err error) {
 }
 
 func (loghelper *LogHelper) ErrorMessage(context *SessionContext, messsage string) {
-	logData := share.AuthSvcLog{
-		Log: share.Action{
+	logData := shared.AuthSvcLog{
+		Log: shared.Action{
 			Message:   messsage,
 			RequestId: context.Id,
 		},
@@ -78,15 +78,15 @@ func (loghelper *LogHelper) ErrorMessage(context *SessionContext, messsage strin
 	loghelper.WriteLog(logrus.ErrorLevel, context, &logData)
 }
 func (loghelper *LogHelper) WarnMessage(context *SessionContext, messsage string) {
-	logData := share.AuthSvcLog{
-		Log: share.Action{
+	logData := shared.AuthSvcLog{
+		Log: shared.Action{
 			Message:   messsage,
 			RequestId: context.Id,
 		},
 	}
 	loghelper.WriteLog(logrus.WarnLevel, context, &logData)
 }
-func (loghelper *LogHelper) WriteFinishLog(lv logrus.Level, context *SessionContext, logData *share.AuthSvcLog, message string) {
+func (loghelper *LogHelper) WriteFinishLog(lv logrus.Level, context *SessionContext, logData *shared.AuthSvcLog, message string) {
 	if len(message) == 0 {
 		message = "done"
 	}
@@ -122,7 +122,7 @@ func (loghelper *LogHelper) GetLiteEntry(context *SessionContext, action string)
 	return entry
 }
 
-func (loghelper *LogHelper) GetEntry(context *SessionContext, logData *share.AuthSvcLog) *logrus.Entry {
+func (loghelper *LogHelper) GetEntry(context *SessionContext, logData *shared.AuthSvcLog) *logrus.Entry {
 	entry := loghelper.logger.WithFields(logrus.Fields{
 		"Duration":     logData.Log.Duration,
 		"IsValidError": logData.Log.IsValidError,
@@ -161,7 +161,7 @@ func (loghelper *LogHelper) GetEntry(context *SessionContext, logData *share.Aut
 	return entry
 }
 
-func (loghelper *LogHelper) WriteLog(lv logrus.Level, context *SessionContext, logData *share.AuthSvcLog) {
+func (loghelper *LogHelper) WriteLog(lv logrus.Level, context *SessionContext, logData *shared.AuthSvcLog) {
 	entry := loghelper.logger.WithFields(logrus.Fields{
 		"Duration":     logData.Log.Duration,
 		"IsValidError": logData.Log.IsValidError,
@@ -201,10 +201,10 @@ func (loghelper *LogHelper) WriteLog(lv logrus.Level, context *SessionContext, l
 	entry.Log(lv, logData.Log.Message)
 }
 
-func (loghelper *LogHelper) StartLog(context *SessionContext, action string, isValidError bool) *share.AuthSvcLog {
+func (loghelper *LogHelper) StartLog(context *SessionContext, action string, isValidError bool) *shared.AuthSvcLog {
 
-	logdata := share.AuthSvcLog{
-		Log: share.Action{
+	logdata := shared.AuthSvcLog{
+		Log: shared.Action{
 			StartAt:      time.Now().UTC(),
 			Action:       action,
 			RequestId:    context.Id,

@@ -3,7 +3,7 @@ package controller
 import (
 	"context"
 	"go-microservices/app/config"
-	log_helper "go-microservices/cores/logs"
+	log_helper "go-microservices/core/logs"
 	pb "go-microservices/pd"
 	"net/http"
 )

@@ -1,4 +1,4 @@
-package share
+package shared
 
 import (
 	"fmt"
@@ -34,15 +34,15 @@ type errorCodes struct {
 }
 
 var ErrorCodes = &errorCodes{
-	OK:                  CustomErr{Code: 200, Message: "successed"},
-	Unauthorized:        CustomErr{Code: 401, Message: "Unauthorized"},
+	OK:                  CustomErr{Code: 200, Message: "success"},
+	Unauthorized:        CustomErr{Code: 401, Message: "unauthorized"},
 	NoContent:           CustomErr{Code: 400, Message: "no content"},
 	InvalidClientHeader: CustomErr{Code: 422, Message: "invalid client header"},
 	InvalidUserIdHeader: CustomErr{Code: 421, Message: "invalid user id"},
 	ParamError:          CustomErr{Code: 423, Message: "param error"},
 	RequestExpired:      CustomErr{Code: 424, Message: "request has expired"},
-	NetworkError:        CustomErr{Code: 500, Message: "cannot Create Account Missing Param "},
-	UnKnownError:        CustomErr{Code: 499, Message: "UnKnownError"},
+	NetworkError:        CustomErr{Code: 500, Message: "cannot create account missing Param "},
+	UnKnownError:        CustomErr{Code: 499, Message: "unknown error"},
 }
 
 func (e *errorCodes) IsUnknown(err error) bool {

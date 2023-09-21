@@ -1,7 +1,7 @@
-package cores_logs
+package core_logs
 
 import (
-	"go-microservices/app/share"
+	"go-microservices/shared"
 
 	"github.com/sirupsen/logrus"
 )
@@ -25,15 +25,15 @@ type SessionContext struct {
 type ILogHelper interface {
 	Instance(lg *logrus.Logger)
 	GetLogger() *logrus.Logger
-	GetEntry(context *SessionContext, logData *share.AuthSvcLog) *logrus.Entry
+	GetEntry(context *SessionContext, logData *shared.AuthSvcLog) *logrus.Entry
 	GetLiteEntry(context *SessionContext, action string) *logrus.Entry
 	InfoMessage(context *SessionContext, action string, messsage string)
 	ErrorMessage(context *SessionContext, messsage string)
 	Error(context *SessionContext, err error)
 	SysError(err error)
 	WarnMessage(context *SessionContext, messsage string)
-	WriteLog(lv logrus.Level, context *SessionContext, logData *share.AuthSvcLog)
-	WriteFinishLog(lv logrus.Level, context *SessionContext, logData *share.AuthSvcLog, message string)
-	StartLog(context *SessionContext, action string, isValidError bool) *share.AuthSvcLog
-	Duration(log share.Action)
+	WriteLog(lv logrus.Level, context *SessionContext, logData *shared.AuthSvcLog)
+	WriteFinishLog(lv logrus.Level, context *SessionContext, logData *shared.AuthSvcLog, message string)
+	StartLog(context *SessionContext, action string, isValidError bool) *shared.AuthSvcLog
+	Duration(log shared.Action)
 }

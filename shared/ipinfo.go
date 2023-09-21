@@ -4,7 +4,7 @@
 //    IPInfo, err := UnmarshalIPInfo(bytes)
 //    bytes, err = IPInfo.Marshal()
 
-package share
+package shared
 
 import "encoding/json"
 
