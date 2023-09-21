@@ -36,14 +36,3 @@ func (slc *intSlice) RandIdFromRates(r []int) int {
 	}
 	return -1
 }
-
-func (slc *intSlice) Contain(ss []int, sv int) (exist bool) {
-	exist = false
-	for _, v := range ss {
-		if v == sv {
-			exist = true
-			return
-		}
-	}
-	return
-}

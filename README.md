@@ -1,2 +1,1 @@
-# Go Microservice Boilerplate
-
+# Golang Gin Boilerplate

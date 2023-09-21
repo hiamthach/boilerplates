@@ -10,7 +10,6 @@ type date struct{}
 var Date date
 
 const TimeLayout = "2006-01-02T15:04:05.000Z"
-const TimeLayout_Default = "2006-01-02 15:04:05.999999999 -0700 MST"
 
 func (d date) ToISOString(t time.Time) string {
 	return t.UTC().Format(TimeLayout)
@@ -44,12 +43,4 @@ func (d date) NextDayAtHour(hour int) int64 {
 	now := time.Now()
 	tomorrow := time.Date(now.Year(), now.Month(), now.Day()+1, hour, 0, 0, 0, time.UTC)
 	return tomorrow.Unix()
-}
-
-func (d date) NextWeekAtHour(hour int) int64 {
-	now := time.Now()
-	iWeekDay := int(now.Weekday())
-	remainInWeek := 7 - iWeekDay
-	nextWeekAtHour := time.Date(now.Year(), now.Month(), now.Day()+remainInWeek+1, hour, 0, 0, 0, time.UTC)
-	return nextWeekAtHour.Unix()
 }

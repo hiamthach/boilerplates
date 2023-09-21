@@ -1,4 +1,4 @@
-package crypto
+package core_crypto
 
 import (
 	"crypto/aes"
@@ -38,7 +38,7 @@ func DecryptString(key string, content string) string {
 
 	stream.XORKeyStream(bytes, bytes)
 
-	return fmt.Sprintf("%s", string(bytes))
+	return string(bytes)
 }
 
 func Base64String(content string) string {

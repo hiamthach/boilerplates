@@ -1,10 +1,17 @@
 package main
 
 import (
-	"go-microservices/app/router"
+	"fmt"
+	app "go-gin/app"
+	apphost "go-gin/app/apphost"
 )
 
+func init() {
+	fmt.Println("Initialize app...")
+	apphost.IoC()
+}
+
 func main() {
-	go router.StartGRPC()
-	router.Start()
+	// start gin server
+	app.Start(&apphost.AppConfig, apphost.AppLog)
 }
